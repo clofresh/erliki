@@ -1,0 +1,3 @@
+[submodule "deps/beepbeep"]
+	path = deps/beepbeep
+	url = git://github.com/davebryson/beepbeep.git
