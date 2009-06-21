@@ -14,7 +14,27 @@ handle_request("login", []) ->
     handle_request("login", [], beepbeep_args:method(Env));
 
 handle_request("register", []) ->
-    handle_request("register", [], beepbeep_args:method(Env)).
+    handle_request("register", [], beepbeep_args:method(Env));
+
+handle_request("status", []) ->
+    case beepbeep_args:get_session_data("user_name", Env) of
+        undefined ->
+			{render, "user/status.html", 
+				[{user, ""}]};
+		User_Name when User_Name =:= "Anon" ->
+			{render, "user/status.html", 
+				[{user, ""}]};
+        User_Name ->
+			{render, "user/status.html", 
+				[{user, User_Name}]}
+    end;
+
+handle_request("logout", []) ->
+	beepbeep_args:set_session_data("user_name", undefined, Env),
+	{redirect, "/wiki/"}.
+
+
+
 
 handle_request("login", [], 'GET') ->
     {render, "user/login.html", []};
