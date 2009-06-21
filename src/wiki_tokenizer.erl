@@ -1,4 +1,10 @@
+%%
+%% wiki_tokenizer module
+%% Controls how raw text is tokenized for processing by wiki_parser
+%%
 -module(wiki_tokenizer).
+-author('Carlo Cabanilla <http://syntacticbayleaves.com>').
+
 -export([tokenize/1, generate_parser/0]).
 
 tokenize(S) ->

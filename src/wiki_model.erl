@@ -1,7 +1,9 @@
 %%
-%% Sample default "/" controller, implement this to your needs
+%% wiki_model module
+%% Controls how wiki data is read and written from Mnesia
 %%
 -module(wiki_model).
+-author('Carlo Cabanilla <http://syntacticbayleaves.com>').
 
 -export([get_page/1, update_page/3, output_page/2, output/2]).
 -include("erliki_records.hrl").

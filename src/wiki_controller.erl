@@ -1,7 +1,9 @@
 %%
-%% Sample default "/" controller, implement this to your needs
+%% wiki_controller module
+%% Controls how web requests to /wiki/* are processed
 %%
 -module(wiki_controller,[Env]).
+-author('Carlo Cabanilla <http://syntacticbayleaves.com>').
 
 -export([handle_request/2, before_filter/0]).
 -include("erliki_records.hrl").
