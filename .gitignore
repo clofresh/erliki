@@ -1,2 +1,3 @@
 *.beam
 Mnesia*@*
+src/wiki_parser.erl

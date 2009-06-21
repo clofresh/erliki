@@ -1,5 +1,5 @@
 -module(wiki_tokenizer).
--export([tokenize/1]).
+-export([tokenize/1, generate_parser/0]).
 
 tokenize(S) ->
     lists:flatten(tokenize(S, 0, string_state)).
@@ -29,4 +29,9 @@ tokenize(S, Count, State) ->
         nomatch -> 
             [{string, Count + 1, S}]
     end.
+
+
+generate_parser() ->
+    yecc:yecc("wiki.yrl", "wiki_parser.erl").
+
 
