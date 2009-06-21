@@ -1,3 +1,4 @@
 *.beam
 Mnesia*@*
 src/wiki_parser.erl
+erl_crash.dump
